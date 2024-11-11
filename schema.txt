@@ -1,0 +1,8 @@
+```
+CREATE TABLE RoadImages (
+    ImageID INT PRIMARY KEY,
+    ProtectedBikeLane BOOLEAN,
+    ObstructionsInBikeLane BOOLEAN,
+    BikeLaneType ENUM('BikeOnly', 'SharedPedestrian', 'SharedBus')
+);
+```
