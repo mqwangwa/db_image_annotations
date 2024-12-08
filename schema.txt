@@ -1,8 +1,8 @@
 ```
-CREATE TABLE RoadImages (
-    ImageID INT PRIMARY KEY,
-    ProtectedBikeLane BOOLEAN,
-    ObstructionsInBikeLane BOOLEAN,
-    BikeLaneType ENUM('BikeOnly', 'SharedPedestrian', 'SharedBus')
+CREATE TABLE Images (
+  id INT PRIMARY KEY,
+  barrier_protection VARCHAR(20) CHECK(barrier_protection IN ('barrier', 'separation', 'unprotected')),
+  obstruction_status VARCHAR(20) CHECK(obstruction_status IN ('obstruction-free', 'obstructed by cars', 'obstructed by trash bins', 'obstructed by something else')),
+  lane_type VARCHAR(20) CHECK(lane_type IN ('biker-only', 'shared with pedestrians', 'shared with buses'))
 );
 ```
