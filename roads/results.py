@@ -4,7 +4,6 @@ import PIL.Image
 import os
 import google.generativeai as genai
 import dotenv
-import typing_extensions as typing
 import json
 import pandas as pd
 import time

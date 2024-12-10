@@ -10,7 +10,9 @@ from io import BytesIO
 from schema_met_02 import Schema
 
 SAMPLE_FRAC = 0.01
+INPUT_FILE = "met_collection/datasets/FilteredObjects.xlsx"
 OUTPUT_FILE = "met_collection/datasets/GeminiResults.xlsx"
+
 
 def get_image_url(objectID):
     response = requests.get(
@@ -23,7 +25,7 @@ def make_requests():
     api_key = "AIzaSyAuzJFs7pUs25QzlxT1mlTuP9ljcNQtFJ0"
     genai.configure(api_key=api_key)
     prompt = f"What do you see?"
-    objects = pd.read_excel("met_collection/datasets/FilteredObjects.xlsx")
+    objects = pd.read_excel(INPUT_FILE)
     objects = objects.sample(frac=SAMPLE_FRAC)
     count = 0
     results = []

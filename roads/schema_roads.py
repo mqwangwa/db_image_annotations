@@ -1,3 +1,6 @@
+import typing_extensions as typing
+
+
 class Schema(typing.TypedDict):
     tree: bool
     crosswalk: bool
