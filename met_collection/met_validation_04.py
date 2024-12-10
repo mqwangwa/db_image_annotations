@@ -5,11 +5,11 @@ ATTRIBUTES = ["Classification", "Culture", "Medium", "Period"]
 correct = [0 for _ in ATTRIBUTES]
 incorrect = [0 for _ in ATTRIBUTES]
 
-df_labeled = pd.read_excel("outputs/met_collection/FilteredObjects.xlsx")
+df_labeled = pd.read_excel("met_collection/datasets/FilteredObjects.xlsx")
 df_labeled = df_labeled.set_index("Object ID")
 labeled_objects = df_labeled.to_dict("index")
 
-df_gemini = pd.read_excel("outputs/met_collection/GeminiResults.xlsx")
+df_gemini = pd.read_excel("met_collection/datasets/GeminiResults.xlsx")
 df_gemini = df_gemini.set_index("Object ID")
 gemini_objects = df_gemini.to_dict("index")
 

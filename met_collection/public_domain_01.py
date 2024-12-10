@@ -17,7 +17,7 @@ def get_public_domain(df_original):
 
 
 if __name__ == "__main__":
-    df_original = pd.read_excel("outputs/met_collection/MetObjects.xlsx")
+    df_original = pd.read_excel("met_collection/datasets/MetObjects.xlsx")
     print("dataset loaded")
     df_public_domain = get_public_domain(df_original)
     print("dataset filtered by public domain")
@@ -29,4 +29,4 @@ if __name__ == "__main__":
                     "Period", "Classification", "Culture", "Medium"]
     df_filtered = df_filtered[cols_to_keep]
     df_filtered.to_excel(
-        "outputs/met_collection/FilteredObjects.xlsx", index=False)
+        "met_collection/datasets/FilteredObjects.xlsx", index=False)
