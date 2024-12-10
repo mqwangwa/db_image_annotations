@@ -11,7 +11,8 @@ For both case studies, we followed the same four steps.
 4. Validate the annotated dataset against a human-labeled sample.
 
 The code for the two case studies are presented as examples. We would expect a user to perform steps 1 and 2, and our system handles step 3 to build the annotated dataset. Step 4 is optional for the user, but it was needed for evaluating our system.
-## Roads
+
+We describe the codebase for the Met Collection case study below, and the structure for `roads` is extremely similar. However, that folder contains additional code for collecting the data from OpenStreetMaps (`osm`) and building the visualization (`visualization`).
 
 ## Met Collection
 ### 01. Building the Image Dataset
