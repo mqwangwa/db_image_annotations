@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #schema-q {
+                height: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <form id="form" action="/start" method="POST" enctype="multipart/form-data">
+            <label for="name">1. Choose a name: </label>
+            <input type="text" name="name">
+            <br>
+            <label for="schema">2. Schema (JSON object format; keys are queries, values are Python type annotations): </label>
+            <textarea type="text" name="schema"></textarea>
+            <br>            
+            <label for="file">3. Choose .osm file</label>
+            <input type="file" name="file">
+            <br>
+            <button type="submit">Start</button>
+        </form>
+        <div id="results"></div>
+        <script>
+            document.getElementById("form").addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                const formData = new FormData(this)
+
+                fetch(this.action, {
+                    method: this.method,
+                    body: formData
+                })
+                .then(response => {
+                    return response.json()
+                })
+                .then(data => {
+                    const responseMessage = document.getElementById("results")
+                    responseMessage.innerHTML = `<a href="${data["link"]}">${data["link"]}</a>`
+                })
+            });
+        </script>
+    </body>
+</html>
